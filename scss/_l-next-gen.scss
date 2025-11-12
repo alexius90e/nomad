@@ -1,172 +1,93 @@
 .next-gen {
-  &__title {
-    font-family: 'Geist', sans-serif;
-    font-weight: 400;
-    font-size: 32px;
-    color: #f5f5f5;
+  background: url(../assets/first-screen-info-bg.svg) center no-repeat;
+  background-size: 600px;
+
+  @include tablet {
+    background-size: 480px;
   }
 
   &__wrapper {
     display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 894px;
+    padding: 130px 0;
+    margin: 0 auto;
 
     @include tablet {
-      flex-wrap: wrap;
+      padding: 92px 0 82px;
     }
   }
 
   &__card {
-    flex: 0 0 calc(25% + 24px / 4 * 3);
-    min-width: calc(25% + 24px / 4 * 3);
-    max-width: calc(25% + 24px / 4 * 3);
-    margin-left: -24px;
-    box-sizing: border-box;
+    display: block;
+    flex: 0 0 188px;
+    width: 100%;
 
     @include tablet {
-      display: flex;
-      flex: 1 1 100%;
-      min-width: auto;
-      max-width: none;
-      margin-left: 0;
-      margin-top: -24px;
+      flex: 0 0 150px;
     }
 
-    &:first-child {
-      margin-left: 0;
+    &_speed {
+      order: 0;
 
       @include tablet {
-        margin-top: 0;
+        transform: translate3d(20px, 0, 0);
       }
     }
 
-    &:nth-child(even) {
-      padding-top: 164px;
+    &_protocols {
+      order: 1;
+      transform: translate3d(-25px, -42px, 0);
 
       @include tablet {
-        justify-content: flex-end;
-        padding: 0;
+        order: 3;
+        transform: translate3d(20px, 0, 0);
       }
     }
 
-    &:nth-child(odd) {
-      padding-bottom: 164px;
+    &_privacy {
+      order: 3;
+      transform: translate3d(137px, 0, 0);
 
       @include tablet {
-        justify-content: flex-start;
-        padding: 0;
+        flex: 0 0 104px;
+        order: 1;
+        transform: translate3d(-20px, 40px, 0);
       }
     }
 
-    &-content {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      min-height: 280px;
-      padding: 24px;
-      box-sizing: border-box;
-      border: 3px solid #101112;
-      background-color: #212a24;
+    &_setup {
+      order: 4;
+      max-width: 128px;
+      transform: translate3d(-169px, -74px, 0);
 
       @include tablet {
-        flex: 1 1 auto;
-        max-width: 380px;
-        min-width: 220px;
-        min-height: 220px;
-      }
-
-      @include mobile {
-        max-width: calc(100% - 180px);
-      }
-
-      &::before {
-        content: '';
-        position: absolute;
-        display: block;
-        width: 48px;
-        height: 100px;
-        border: 1px solid #78f7a8;
-      }
-    }
-
-    &:nth-child(1) &-content::before {
-      top: calc(100% + 10px);
-      right: 34px;
-      border-top: none;
-      border-right: none;
-
-      @include tablet {
-        display: none;
-      }
-    }
-
-    &:nth-child(2) &-content::before {
-      bottom: calc(100% + 10px);
-      right: 34px;
-      border-bottom: none;
-      border-right: none;
-
-      @include tablet {
-        top: 34px;
-        right: calc(100% + 10px);
-        border-bottom: 1px solid #78f7a8;
-        border-left: 1px solid #78f7a8;
-        border-top: none;
-        border-right: none;
-      }
-    }
-
-    &:nth-child(3) &-content::before {
-      display: none;
-
-      @include tablet {
-        display: block;
-        top: 34px;
-        left: calc(100% + 10px);
-        border-bottom: 1px solid #78f7a8;
-        border-right: 1px solid #78f7a8;
-        border-top: none;
-        border-left: none;
-      }
-    }
-
-    &:nth-child(4) &-content::before {
-      bottom: calc(100% + 10px);
-      left: 34px;
-      border-bottom: none;
-      border-left: none;
-
-      @include tablet {
-        top: 34px;
-        right: calc(100% + 10px);
-        left: auto;
-        bottom: auto;
-        border-bottom: 1px solid #78f7a8;
-        border-left: 1px solid #78f7a8;
-        border-top: none;
-        border-right: none;
+        flex: 0 0 104px;
+        transform: translate3d(-20px, -60px, 0);
       }
     }
 
     &-figure {
+      display: block;
+      width: fit-content;
       margin: 0;
 
       &-image {
         display: block;
         max-width: 100%;
-        width: 160px;
         height: auto;
-
-        @include tablet {
-          width: 112px;
-        }
       }
     }
 
     &-title {
-      font-family: "Suisse Int'l Mono", sans-serif;
-      font-weight: 400;
+      margin: 10px 0 0;
+      font-weight: 540;
       font-size: 20px;
-      color: #78f7a8;
+      line-height: 140%;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #5fddc7;
 
       @include tablet {
         font-size: 16px;
@@ -174,15 +95,43 @@
     }
 
     &-text {
-      font-family: "Suisse Int'l Mono", sans-serif;
-      font-weight: 400;
+      margin: 18px 0 0;
+      font-weight: 410;
       font-size: 20px;
+      line-height: 140%;
+      letter-spacing: 0.04em;
       text-transform: uppercase;
-      color: #f5f5f5;
+      color: #f0f3f2;
 
       @include tablet {
         font-size: 16px;
+        margin-top: 12px;
       }
+    }
+  }
+
+  &__title {
+    flex: 1 1 100%;
+    order: 2;
+    margin: 120px 0;
+    font-weight: 540;
+    font-size: 86px;
+    line-height: 100%;
+    text-transform: uppercase;
+    text-align: center;
+    color: #f0f3f2;
+
+    @include desktop {
+      font-size: 90px;
+    }
+
+    @include laptop {
+      font-size: 72px;
+    }
+
+    @include tablet {
+      margin: 116px 0 126px;
+      font-size: 52px;
     }
   }
 }

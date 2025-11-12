@@ -39,6 +39,28 @@
       background: none;
     }
 
+    &-icon {
+      display: flex;
+      align-content: inherit;
+      justify-content: center;
+      margin: 0 0 24px;
+
+      @include tablet {
+        margin-bottom: 14px;
+      }
+
+      &-image {
+        display: block;
+        max-width: 100%;
+        width: 30px;
+        height: auto;
+
+        @include tablet {
+          width: 24px;
+        }
+      }
+    }
+
     &-title {
       margin: 0 0 24px;
       font-weight: 540;

@@ -1,14 +1,23 @@
+// @font-face {
+//   font-family: "SF-Pro";
+//   src: url('../fonts/SF-Pro.ttf') format('truetype');
+//   font-style: normal;
+//   font-weight: normal;
+// }
 
-@font-face {
-  font-family: "SF-Pro";
-  src: url('../fonts/SF-Pro.ttf') format('truetype');
-  font-style: normal;
-  font-weight: normal;
-}
+// @font-face {
+//   font-family: "SF-Pro";
+//   src: url('../fonts/SF-Pro-Text-Regular.otf') format('opentype');
+//   font-style: normal;
+//   font-weight: normal;
+// }
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
 
 html {
   font-size: 16px;
   font-family: 'SF-Pro', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 400;
   font-style: normal;
   scroll-behavior: smooth;
@@ -33,6 +42,7 @@ button,
 input,
 textarea {
   font-family: 'SF-Pro', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   text-decoration: none;
 }
 
