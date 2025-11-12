@@ -52,12 +52,21 @@ img {
 }
 
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
   padding: 32px 0;
+  background-color: #1a2422;
 }
 @media (max-width: 768px) {
   .header {
     padding: 20px 0;
   }
+}
+.header .container {
+  max-width: 1400px;
 }
 .header__wrapper {
   display: -webkit-box;
@@ -111,6 +120,11 @@ img {
   line-height: 110%;
   text-transform: uppercase;
   color: #f0f3f2;
+  -webkit-transition: color ease-out 0.2s;
+  transition: color ease-out 0.2s;
+}
+.header__logo-link:hover {
+  color: #5fddc7;
 }
 .header__burger {
   display: none;
@@ -262,6 +276,8 @@ img {
   line-height: 110%;
   text-transform: uppercase;
   color: #f0f3f2;
+  -webkit-transition: color ease-out 0.2s;
+  transition: color ease-out 0.2s;
 }
 @media (max-width: 768px) {
   .header__nav-link {
@@ -270,6 +286,9 @@ img {
     width: fit-content;
     font-size: 36px;
   }
+}
+.header__nav-link:hover {
+  color: #5fddc7;
 }
 .header__info {
   display: none;
@@ -345,23 +364,12 @@ img {
   color: rgba(240, 243, 242, 0.55);
 }
 
-.main {
-  padding: 100px 0;
+.first-screen {
+  border-bottom: 1px solid #264540;
 }
-@media (max-width: 768px) {
-  .main {
-    padding: 50px 0;
-  }
+.first-screen .container {
+  max-width: 1480px;
 }
-.main > * {
-  padding: 100px 0;
-}
-@media (max-width: 768px) {
-  .main > * {
-    padding: 50px 0;
-  }
-}
-
 .first-screen__wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -369,20 +377,121 @@ img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 90px;
+  gap: 0;
+}
+@media (max-width: 1320px) {
+  .first-screen__wrapper {
+    gap: 40px;
+  }
 }
 @media (max-width: 1024px) {
   .first-screen__wrapper {
-    gap: 40px;
+    gap: 20px;
   }
 }
 @media (max-width: 768px) {
   .first-screen__wrapper {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+    gap: 0;
   }
 }
-.first-screen__figure {
+.first-screen__info {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  padding: 40px;
+}
+@media (max-width: 1320px) {
+  .first-screen__info {
+    padding: 40px 0;
+  }
+}
+@media (max-width: 768px) {
+  .first-screen__info {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 100%;
+            flex: 1 1 100%;
+    padding: 78px 0 40px;
+  }
+}
+.first-screen__info-title {
+  margin: 0 0 24px;
+  font-weight: 540;
+  font-size: 112px;
+  line-height: 100%;
+  text-transform: uppercase;
+  text-align: center;
+  color: #f0f3f2;
+}
+@media (max-width: 1320px) {
+  .first-screen__info-title {
+    font-size: 90px;
+  }
+}
+@media (max-width: 1024px) {
+  .first-screen__info-title {
+    font-size: 72px;
+  }
+}
+@media (max-width: 768px) {
+  .first-screen__info-title {
+    max-width: 360px;
+    margin: 0 auto 14px;
+    font-size: 52px;
+  }
+}
+.first-screen__info-subtitle {
+  max-width: 262px;
+  margin: 0 auto 64px;
+  font-weight: 410;
+  font-size: 20px;
+  line-height: 140%;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-align: center;
+  color: #f0f3f2;
+}
+@media (max-width: 768px) {
+  .first-screen__info-subtitle {
+    margin-bottom: 20px;
+    font-size: 18px;
+  }
+}
+.first-screen__info-download {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: inherit;
+      align-content: inherit;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.first-screen__info-download-button {
+  display: inline-block;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 10px;
+  background-color: #5fddc7;
+  -webkit-transition: background-color ease-out 0.2s;
+  transition: background-color ease-out 0.2s;
+  cursor: pointer;
+}
+.first-screen__info-download-button:hover {
+  background-color: #f0f3f2;
+}
+.first-screen__info-download-button::before {
+  content: "";
+  display: block;
+  width: 130px;
+  aspect-ratio: 130/33;
+  background: url(../assets/appstore.svg) center/contain no-repeat;
+}
+.first-screen__phone {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -393,72 +502,41 @@ img {
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 auto;
-          flex: 0 0 auto;
+      -ms-flex: 0 0 520px;
+          flex: 0 0 520px;
+  padding: 70px 40px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+@media (max-width: 1320px) {
+  .first-screen__phone {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 386px;
+            flex: 0 0 386px;
+    padding: 70px 0;
+  }
 }
 @media (max-width: 768px) {
-  .first-screen__figure {
+  .first-screen__phone {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
     -webkit-box-flex: 1;
         -ms-flex: 1 1 100%;
             flex: 1 1 100%;
+    max-height: 320px;
+    padding: 0;
+    overflow: hidden;
   }
 }
-.first-screen__figure-image {
+.first-screen__phone-image {
   display: block;
   max-width: 100%;
-  width: 220px;
   height: auto;
 }
 @media (max-width: 768px) {
-  .first-screen__figure-image {
-    width: 193px;
-  }
-}
-.first-screen__info {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 1 642px;
-          flex: 0 1 642px;
-}
-@media (max-width: 768px) {
-  .first-screen__info {
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 100%;
-            flex: 1 1 100%;
-  }
-}
-.first-screen__info-title, .first-screen__info-subtitle {
-  margin: 0;
-  font-weight: 400;
-  font-size: 80px;
-  color: #78f7a8;
-}
-@media (max-width: 1024px) {
-  .first-screen__info-title, .first-screen__info-subtitle {
-    font-size: 64px;
-  }
-}
-@media (max-width: 768px) {
-  .first-screen__info-title, .first-screen__info-subtitle {
-    font-size: 50px;
-  }
-}
-.first-screen__info-title {
-  color: #78f7a8;
-}
-.first-screen__info-subtitle {
-  color: #f5f5f5;
-}
-.first-screen__info-description {
-  margin: 40px 0 0;
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 160%;
-  color: #f5f5f5;
-}
-@media (max-width: 768px) {
-  .first-screen__info-description {
-    margin-top: 20px;
-    font-size: 20px;
+  .first-screen__phone-image {
+    width: 240px;
   }
 }
 
