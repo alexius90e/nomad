@@ -1,0 +1,225 @@
+.header {
+  padding: 32px 0;
+
+  @include tablet {
+    padding: 20px 0;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  &__main {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+
+    @include tablet {
+      position: relative;
+      z-index: 9999;
+      flex: 1 1 100%;
+    }
+  }
+
+  &__logo {
+    display: block;
+    flex: 0 0 auto;
+    width: fit-content;
+
+    &-link {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-weight: 540;
+      font-size: 16px;
+      line-height: 110%;
+      text-transform: uppercase;
+      color: #f0f3f2;
+    }
+  }
+
+  &__burger {
+    display: none;
+    flex: 0 0 auto;
+
+    @include tablet {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &-button {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      width: 18px;
+      padding: 0;
+      aspect-ratio: 1;
+      box-sizing: border-box;
+      border: none;
+      background-color: rgba($color: #ffffff, $alpha: 0);
+      cursor: pointer;
+
+      &::before,
+      &::after {
+        content: '';
+        display: block;
+        width: 18px;
+        height: 2px;
+        border-radius: 10px;
+        background-color: #d2e4ff;
+        transition: transform ease-in-out 0.2s;
+        will-change: transform;
+      }
+
+      &::before {
+        transform: translateY(4px);
+      }
+
+      &::after {
+        transform: translateY(-4px);
+      }
+
+      &.active::before {
+        transform: translateY(1px) rotate(45deg);
+      }
+
+      &.active::after {
+        transform: translateY(-1px) rotate(-45deg);
+      }
+    }
+  }
+
+  &__menu {
+    flex: 1 1 auto;
+    max-width: 664px;
+    margin: 0;
+    box-sizing: border-box;
+
+    @include tablet {
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      max-width: 100dvw;
+      margin: 0;
+      padding: 78px 20px 20px;
+      background-color: #1a2422;
+      transform: translateX(120dvw);
+      transition: transform ease-in-out 0.2s;
+      will-change: transform;
+    }
+
+    &.active {
+      transform: translateX(0);
+    }
+
+    &-wrapper {
+      @include tablet {
+        display: flex;
+        flex-direction: column;
+        gap: 80px;
+        max-height: calc(100dvh - 78px - 20px);
+        height: 100%;
+        overflow: auto;
+      }
+    }
+  }
+
+  &__nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+    padding: 0 40px;
+
+    @include tablet {
+      flex-direction: column;
+      gap: 11px;
+      padding: 0;
+    }
+
+    &-link {
+      display: inline-block;
+      padding: 0px 4px;
+      box-sizing: border-box;
+      font-weight: 540;
+      font-size: 16px;
+      line-height: 110%;
+      text-transform: uppercase;
+      color: #f0f3f2;
+
+      @include tablet {
+        width: fit-content;
+        font-size: 36px;
+      }
+    }
+  }
+
+  &__info {
+    display: none;
+
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      flex: 1 1 auto;
+    }
+
+    &-docs {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 0;
+
+      &-link {
+        flex: 1 1 20%;
+        font-weight: 540;
+        font-size: 16px;
+        line-height: 110%;
+        text-transform: uppercase;
+        color: #f0f3f2;
+
+        &:first-child {
+          text-align: left;
+        }
+
+        &:last-child {
+          text-align: right;
+        }
+      }
+
+      &-icon {
+        display: block;
+        flex: 0 0 auto;
+        max-width: 100%;
+        width: 24px;
+        height: auto;
+      }
+    }
+
+    &-copyright {
+      margin: 20px 0 0;
+      font-weight: 410;
+      font-size: 10px;
+      line-height: 144%;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: rgba(240, 243, 242, 0.55);
+    }
+
+    &-disclaimer {
+      margin: 10px 0 0;
+      font-weight: 410;
+      font-size: 10px;
+      line-height: 144%;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: rgba(240, 243, 242, 0.55);
+    }
+  }
+}

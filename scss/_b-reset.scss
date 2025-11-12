@@ -1,0 +1,46 @@
+
+@font-face {
+  font-family: "SF-Pro";
+  src: url('../fonts/SF-Pro.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+
+html {
+  font-size: 16px;
+  font-family: 'SF-Pro', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  overflow-y: scroll;
+  color: #ffffff;
+  background-color: #1a2422;
+
+  &.hidden {
+    @include tablet {
+      overflow: hidden;
+    }
+  }
+}
+
+a,
+button,
+input,
+textarea {
+  font-family: 'SF-Pro', sans-serif;
+  text-decoration: none;
+}
+
+figure {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
