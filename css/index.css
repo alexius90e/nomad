@@ -401,6 +401,7 @@ img {
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
   padding: 40px;
+  background: url(../assets/first-screen-info-bg.svg) center/contain no-repeat;
 }
 @media (max-width: 1320px) {
   .first-screen__info {
@@ -413,6 +414,7 @@ img {
         -ms-flex: 1 1 100%;
             flex: 1 1 100%;
     padding: 78px 0 40px;
+    background: none;
   }
 }
 .first-screen__info-title {

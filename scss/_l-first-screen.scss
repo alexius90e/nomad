@@ -27,6 +27,7 @@
   &__info {
     flex: 1 1 auto;
     padding: 40px;
+    background: url(../assets/first-screen-info-bg.svg) center / contain no-repeat;
 
     @include desktop {
       padding: 40px 0;
@@ -35,6 +36,7 @@
     @include tablet {
       flex: 1 1 100%;
       padding: 78px 0 40px;
+      background: none;
     }
 
     &-title {
