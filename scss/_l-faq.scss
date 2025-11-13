@@ -1,50 +1,176 @@
 .faq {
-  display: none;
+  border-bottom: 1px solid #264540;
+
+  &__wrapper {
+    padding: 185px 0;
+    background: url(../assets/faq-bg.svg) right center / 800px no-repeat;
+
+    @include desktop {
+      padding: 150px 0;
+      background-size: contain;
+    }
+
+    @include laptop {
+      padding: 100px 0;
+    }
+
+    @include tablet {
+      padding: 52px 0;
+    }
+  }
 
   &__title {
-    margin: 0 0 32px;
-    font-weight: 400;
-    font-size: 32px;
-    color: #f5f5f5;
+    margin: 0 0 64px;
+    font-weight: 540;
+    font-size: 86px;
+    line-height: 100%;
+    text-transform: uppercase;
+    color: #f0f3f2;
+
+    @include desktop {
+      font-size: 80px;
+    }
+
+    @include laptop {
+      margin-bottom: 48px;
+      font-size: 72px;
+    }
+
+    @include tablet {
+      margin-bottom: 32px;
+      font-size: 52px;
+    }
   }
 
   &__content {
+    position: relative;
     display: flex;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 32px 20px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      right: 0;
+      display: block;
+      height: 1px;
+      background-color: #264540;
+
+      @include tablet {
+        top: 3px;
+        right: auto;
+        bottom: 0;
+        height: auto;
+        width: 1px;
+      }
+    }
   }
 
   &__item {
-    padding: 0 0 30px;
-    border-bottom: 2px dashed rgba($color: #f5f5f5, $alpha: 0.1);
+    position: relative;
+    z-index: 10;
+    flex: 0 0 calc(100% / 3 - 20px / 3 * 2);
+    max-width: calc(100% / 3 - 20px / 3 * 2);
 
-    &:last-child {
-      padding: 0;
-      border: none;
+    @include tablet {
+      flex: 1 1 100%;
+      max-width: none;
+      padding-left: 24px;
+    }
+
+    &::before {
+      content: '';
+      display: block;
+      width: 7px;
+      height: 7px;
+      margin: 0 0 32px;
+      border-radius: 20px;
+      background-color: #5fddc7;
+
+      @include tablet {
+        position: absolute;
+        top: 6px;
+        left: 0;
+      }
     }
 
     &-question {
-      margin: 0 0 10px;
-      font-family: "Suisse Int'l Mono", sans-serif;
-      font-weight: 400;
-      font-size: 24px;
-      color: #78f7a8;
+      margin: 0 0 18px;
+      font-weight: 540;
+      font-size: 20px;
+      line-height: 140%;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #5fddc7;
+
+      @include laptop {
+        font-size: 18px;
+      }
 
       @include tablet {
-        font-size: 20px;
+        margin-bottom: 12px;
+        font-size: 16px;
       }
     }
 
     &-answer {
-      padding-left: 40px;
-      font-family: "Suisse Int'l Mono", sans-serif;
-      font-weight: 400;
-      font-size: 24px;
-      color: #f5f5f5;
+      max-width: 348px;
+      margin: 12px 0 0;
+      font-weight: 410;
+      font-size: 18px;
+      line-height: 144%;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #f0f3f2;
+
+      @include laptop {
+        font-size: 18px;
+      }
 
       @include tablet {
-        padding-left: 20px;
-        font-size: 20px;
+        max-width: none;
+        margin-top: 8px;
+        font-size: 16px;
+      }
+    }
+  }
+
+  &__help {
+    margin: 100px 0 0;
+
+    @include laptop {
+      margin-top: 64px;
+    }
+
+    @include tablet {
+      margin-top: 32px;
+    }
+
+    &-button {
+      display: inline-block;
+      padding: 17px 42px;
+      box-sizing: border-box;
+      font-weight: 540;
+      font-size: 14px;
+      line-height: 125%;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      text-align: center;
+      color: #5fddc7;
+      border: none;
+      border-radius: 60px;
+      outline: none;
+      background-color: rgba($color: #5fddc7, $alpha: 0.08);
+      transition-property: background-color, color;
+      transition-timing-function: ease-out;
+      transition-duration: 0.2s;
+      cursor: pointer;
+
+      &:hover {
+        color: #f0f3f2;
+        background-color: rgba($color: #ffffff, $alpha: 0.08);
       }
     }
   }
