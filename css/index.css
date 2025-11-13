@@ -1138,28 +1138,79 @@ img {
 }
 
 .keep-journey {
-  display: none;
+  padding: 188px 0 148px;
+  background: url(../assets/keep-journey-bg.svg) center/1164px no-repeat;
+}
+@media (max-width: 1320px) {
+  .keep-journey {
+    background-size: contain;
+  }
+}
+@media (max-width: 768px) {
+  .keep-journey {
+    padding: 180px 0;
+    background-image: url(../assets/faq-bg.svg);
+  }
 }
 .keep-journey__title {
-  margin: 0;
-  font-weight: 400;
-  font-size: 79px;
-  color: #f5f5f5;
+  margin: 0 auto 64px;
+  max-width: 700px;
+  font-weight: 540;
+  font-size: 112px;
+  line-height: 100%;
+  text-transform: uppercase;
+  text-align: center;
+  color: #f0f3f2;
+}
+@media (max-width: 1320px) {
+  .keep-journey__title {
+    font-size: 90px;
+  }
+}
+@media (max-width: 1024px) {
+  .keep-journey__title {
+    font-size: 72px;
+  }
 }
 @media (max-width: 768px) {
   .keep-journey__title {
-    font-size: 40px;
+    max-width: 360px;
+    margin: 0 auto 20px;
+    font-size: 52px;
   }
 }
-.keep-journey__email-link {
-  font-weight: 400;
-  font-size: 79px;
-  color: #78f7a8;
+.keep-journey__download {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: inherit;
+      align-content: inherit;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
-@media (max-width: 768px) {
-  .keep-journey__email-link {
-    font-size: 40px;
-  }
+.keep-journey__download-button {
+  display: inline-block;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 10px;
+  background-color: #5fddc7;
+  -webkit-transition: background-color ease-out 0.2s;
+  transition: background-color ease-out 0.2s;
+  cursor: pointer;
+}
+.keep-journey__download-button:hover {
+  background-color: #f0f3f2;
+}
+.keep-journey__download-button::before {
+  content: "";
+  display: block;
+  width: 130px;
+  aspect-ratio: 130/33;
+  background: url(../assets/appstore.svg) center/contain no-repeat;
 }
 
 .footer {

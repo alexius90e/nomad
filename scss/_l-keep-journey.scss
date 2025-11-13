@@ -1,25 +1,66 @@
 .keep-journey {
-  display: none;
+  padding: 188px 0 148px;
+  background: url(../assets/keep-journey-bg.svg) center / 1164px no-repeat;
+
+  @include desktop {
+    background-size: contain;
+  }
+
+  @include tablet {
+    padding: 180px 0;
+    background-image: url(../assets/faq-bg.svg);
+  }
 
   &__title {
-    margin: 0;
-    font-weight: 400;
-    font-size: 79px;
-    color: #f5f5f5;
+    margin: 0 auto 64px;
+    max-width: 700px;
+    font-weight: 540;
+    font-size: 112px;
+    line-height: 100%;
+    text-transform: uppercase;
+    text-align: center;
+    color: #f0f3f2;
+
+    @include desktop {
+      font-size: 90px;
+    }
+
+    @include laptop {
+      font-size: 72px;
+    }
 
     @include tablet {
-      font-size: 40px;
+      max-width: 360px;
+      margin: 0 auto 20px;
+      font-size: 52px;
     }
   }
 
-  &__email {
-    &-link {
-      font-weight: 400;
-      font-size: 79px;
-      color: #78f7a8;
+  &__download {
+    display: flex;
+    align-content: inherit;
+    justify-content: center;
 
-      @include tablet {
-        font-size: 40px;
+    &-button {
+      display: inline-block;
+      flex: 0 0 auto;
+      padding: 10px 12px;
+      border: none;
+      border-radius: 10px;
+      background-color: #5fddc7;
+      transition: background-color ease-out 0.2s;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #f0f3f2;
+      }
+
+      &::before {
+        content: '';
+        display: block;
+        width: 130px;
+        aspect-ratio: 130 / 33;
+        background: url(../assets/appstore.svg) center / contain no-repeat;
       }
     }
   }
